@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QLabel, QLayout, QVBoxLayout, QHBoxLayout, QRadioButton, QPushButton
+from PyQt5.QtWidgets import QWidget, QLabel, QLayout, QVBoxLayout, QHBoxLayout, QRadioButton, QPushButton, QButtonGroup
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
 
@@ -25,7 +25,14 @@ class QuizView(QWidget):
         answer_2 = QRadioButton("Lyon")
         answer_3 = QRadioButton("Marseille")
         answer_4 = QRadioButton("Bordeaux")
-
+        
+        #Button group
+        self.button_group = QButtonGroup()
+        self.button_group.addButton(answer_1)
+        self.button_group.addButton(answer_2)
+        self.button_group.addButton(answer_3)
+        self.button_group.addButton(answer_4)
+        
         answer_layout.addWidget(answer_1)
         answer_layout.addWidget(answer_2)
         answer_layout.addWidget(answer_3)
@@ -36,11 +43,11 @@ class QuizView(QWidget):
 
         nav_layout = QHBoxLayout()
 
-        nav_prev = QPushButton("Previous")
-        nav_next = QPushButton("Next")
+        self.nav_prev = QPushButton("Previous")
+        self.nav_next = QPushButton("Next")
 
-        nav_layout.addWidget(nav_prev)
-        nav_layout.addWidget(nav_next)
+        nav_layout.addWidget(self.nav_prev)
+        nav_layout.addWidget(self.nav_next)
 
         nav_layout.setSpacing(15)
         # Setting up the layouts
