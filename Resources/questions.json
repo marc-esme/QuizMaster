@@ -1,0 +1,17 @@
+[
+            {
+                "question": "What is the capital of France?",
+                "answers": ["Paris", "Lyon", "Marseille", "Bordeaux"],
+                "correct": "Paris"
+            },
+             {
+                "question": "What is the capital of Australia?",
+                "answers": ["Sydney", "Adelaide", "Perth", "Canberra"],
+                "correct": "Canberra"
+            },
+            {
+                "question": "What is the main language used in PyQt?",
+                "answers": ["C++", "JavaScript", "Rust", "Python"],
+                "correct": "Python"
+            }
+        ]
