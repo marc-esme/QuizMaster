@@ -16,16 +16,18 @@ class MainWindow(QWidget):
         self.quiz_view = QuizView()
         self.start_view = StartView()
         self.result_view = ResultView()
-        self.stack.setStyleSheet("background-color: lightblue;")
-        self.start_view.setStyleSheet("background-color: lightblue")
-        self.result_view.setStyleSheet("background-color: lightblue")
-
+        #self.stack.setStyleSheet("background-color: lightblue;")
+        #self.start_view.setStyleSheet("background-color: lightblue")
+        #self.result_view.setStyleSheet("background-color: lightblue")
+        self.setFixedSize(800,600)
         #add widgets to the stack
         self.stack.addWidget(self.start_view)
         self.stack.addWidget(self.quiz_view)
         self.stack.addWidget(self.result_view)
         # Create a vertical layout to contain the QStackedWidget
         layout = QVBoxLayout()
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(0)
         layout.addWidget(self.stack)
         self.setLayout (layout)
 
@@ -33,6 +35,8 @@ class MainWindow(QWidget):
 
 app = QApplication(sys.argv) # Creates the application
 app.setWindowIcon(QIcon("Resources/quizicon.png"))
+with open("Resources/style.qss") as f:
+    app.setStyleSheet(f.read())
 #setup app
 model = QuizModel()
 window = MainWindow() # Creates the window
